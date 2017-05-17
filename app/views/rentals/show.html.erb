@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= Rental.human_attribute_name(:name) %>:</strong>
   <%= @rental.name %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong><%= Rental.human_attribute_name(:price) %>:</strong>
   <%= @rental.price %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong><%= Rental.human_attribute_name(:address) %>:</strong>
   <%= @rental.address %>
 </p>
 
 <p>
-  <strong>Age:</strong>
+  <strong><%= Rental.human_attribute_name(:age) %>:</strong>
   <%= @rental.age %>
 </p>
 
 <p>
-  <strong>Note:</strong>
+  <strong><%= Rental.human_attribute_name(:note) %>:</strong>
   <%= @rental.note %>
 </p>
 
-<%= link_to 'Edit', edit_rental_path(@rental) %> |
-<%= link_to 'Back', rentals_path %>
+<%= link_to t('application.common.edit'), edit_rental_path(@rental) %> |
+<%= link_to t('application.common.back'), rentals_path %>

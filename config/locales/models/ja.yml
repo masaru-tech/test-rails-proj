@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      rental: 賃貸物件
+    attributes:
+      rental:
+        id: ID
+        name: 物件名
+        price: 賃料
+        address: 住所
+        age: 築年数
+        note: 備考
+        created_at: 登録日時
+        updated_at: 更新日時

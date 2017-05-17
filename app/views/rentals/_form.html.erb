@@ -19,6 +19,7 @@
   <div class="field">
     <%= f.label :price %>
     <%= f.number_field :price %>
+    <span><%= t('number.currency.format.unit') %></span>
   </div>
 
   <div class="field">
@@ -29,6 +30,7 @@
   <div class="field">
     <%= f.label :age %>
     <%= f.number_field :age %>
+    <span><%= t('datetime.prompts.year') %></span>
   </div>
 
   <div class="field">

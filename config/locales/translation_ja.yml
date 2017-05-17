@@ -1,0 +1,16 @@
+ja:
+  application:
+    common:
+      back: 戻る
+      show: 詳細
+      edit: 編集
+      destroy: 削除
+  rentals:
+    index:
+      title: 物件一覧
+      new: 物件を登録する
+      destroy_confirm: 削除してもよろしいですか？
+    new:
+      title: 物件登録
+    edit:
+      title: 物件編集
