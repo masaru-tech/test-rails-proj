@@ -7,7 +7,7 @@
 
 <p>
   <strong><%= Rental.human_attribute_name(:price) %>:</strong>
-  <%= @rental.price %>
+  <%= number_to_currency(@rental.price) %>
 </p>
 
 <p>
@@ -17,13 +17,33 @@
 
 <p>
   <strong><%= Rental.human_attribute_name(:age) %>:</strong>
-  <%= @rental.age %>
+  <%= "#{@rental.age}#{t('datetime.prompts.year')}" %>
 </p>
 
 <p>
   <strong><%= Rental.human_attribute_name(:note) %>:</strong>
   <%= @rental.note %>
 </p>
+
+<hr>
+
+<% @rental.stations.each.with_index(1) do |station, i| %>
+  <h2><%= "#{Station.model_name.human}#{i}" %></h2>
+  <p>
+    <strong><%= Station.human_attribute_name(:route_name) %>:</strong>
+    <%= station.route_name %>
+  </p>
+
+  <p>
+    <strong><%= Station.human_attribute_name(:name) %>:</strong>
+    <%= station.name %>
+  </p>
+
+  <p>
+    <strong><%= Station.human_attribute_name(:walk_time) %>:</strong>
+    <%= "#{station.walk_time}#{t('datetime.prompts.minute')}" %>
+  </p>
+<% end %>
 
 <%= link_to t('application.common.edit'), edit_rental_path(@rental) %> |
 <%= link_to t('application.common.back'), rentals_path %>

@@ -15,6 +15,7 @@ class RentalsController < ApplicationController
   # GET /rentals/new
   def new
     @rental = Rental.new
+    @rental.stations = 2.times.map{ Station.new }
   end
 
   # GET /rentals/1/edit
@@ -69,6 +70,6 @@ class RentalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rental_params
-      params.require(:rental).permit(:name, :price, :address, :age, :note)
+      params.require(:rental).permit(:name, :price, :address, :age, :note, stations_attributes:[:name, :route_name, :walk_time])
     end
 end
